@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package jalaziz.common;
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "github.com/jalaziz/goland-workspace-test/services/proto/common;common";
+
+message UUID {
+  string value = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+    pattern: "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
+    format: "uuid",
+  }];
+}
